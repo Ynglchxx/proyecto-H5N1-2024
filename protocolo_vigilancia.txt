@@ -1,4 +1,3 @@
-Protocolo,Motivo,Fechamuestra,Región, Comuna,Especie,Categoria,N° animal,Totalmuestras,	Secuenciación,Clasificación
 226260,Denuncia,01-12-2022,Valparaiso,VINA DEL MAR,Gaviota,1,3,,Negativo
 226518,Denuncia,05-12-2022,Magallanes,PUERTO NATALES,Cisne,2,4,,Negativo
 226615,Denuncia,05-12-2022,Tarapaca,IQUIQUE,Pelicano,2,2,H5N1,Positivo
