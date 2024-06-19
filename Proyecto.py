@@ -1,5 +1,6 @@
 #Autor(es): Vicente Ramirez 'El crack´ y Luis Vallejos 'El maquina' juntos son el "Duo Dinamita".
-def lectura_datos(proyecto):
+
+def lectura_datos(proyecto): # Abrir archivos
     f= open(proyecto)
     datos=[]
     for linea in f:
@@ -8,7 +9,7 @@ def lectura_datos(proyecto):
         datos.append(lista)
     f.close
     return datos
-def funcion_a(datos):
+def funcion_a(datos): # Casos por regiones
     lista = []
     for i in datos:
         region = i[3]
@@ -25,32 +26,31 @@ def funcion_a(datos):
 
     return lista , cant_reg
     pass
-def funcion_b(datos): #Casos de Febrero
+def funcion_b(datos): # Casos de Febrero
     cantidad = 0
     for casof in datos:
         fecha = casof[2].split("-")
         if fecha[1] == "02" and fecha[2] == "2023" :
             cantidad = cantidad + 1
     return cantidad
-def funcion_c(datos): #Casos de Pelicanos
-    canti = 0
-    for i in datos :
-        i = datos
-        if i[5] == 'Pelicanos' and i[9] == 'Positivo':
-            canti = canti + 1
-            print(canti)
-        return(canti)
-
-def funcion_d(datos):
-    cantidad = 0
+def funcion_c(datos): # Casos de Pelicanos
+    casos_peli = 0
+    for i in datos:
+        if i[5] == 'Pelicano' and i[9] == 'Positivo':
+            casos_peli = casos_peli + 1
+    return casos_peli
+def funcion_d(datos): # Casos de Loros
+    casosl = []
     for casosl in datos :
+        cantidad = 0
         loro = [5]
         fecha = casosl[2].split("-")
-        if loro == "Loro Trincahue" and fecha[1] == "03" and fecha[2] == "2022" :
+        if loro == "Loro" or "Loro Trincahue" and fecha[1] == "03" and fecha[2] == "2022" :
             cantidad = cantidad + 1
-        return cantidad
-
-def funcion_e(datos):
+            casosl.append(cantidad)
+            print(cantidad)
+        return(cantidad)
+def funcion_e(datos): # Grafico
     pass
 
 if __name__ == "__main__":
@@ -58,11 +58,13 @@ if __name__ == "__main__":
     #print(datos)
     positivos = funcion_a(datos) #casos_positivos
     print(positivos)
-    print(positivos[0][0]) #Regiones
+     #Regiones
     print(positivos[1][0]) #Cantidades
     pos_febr = funcion_b(datos)  #casospos_febr
-    print(pos_febr)
-    pelicano= funcion_c(datos) #casos_pelicanos(datos)
+    #print(pos_febr)
+    pelicano = funcion_c(datos) #casos_pelicanos(datos)
+    print(pelicano)
     loro = funcion_d(datos) #casosloro_marzo(datos)
+    print(loro)
     grafico = funcion_e(datos) #grafico(datos)
     #generar_salida(positivos,pos_febr,pelicano,loro,grafico)
