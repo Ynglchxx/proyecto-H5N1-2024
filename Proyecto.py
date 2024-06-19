@@ -19,12 +19,11 @@ def funcion_a(datos):
     for f in lista :
         cant=0
         for i in datos :
-            if i[3] == f and i[9] == 'Positivo':    #primero se busca la region y se ve si el caso es positivo y se agrega 1
+            if i[3] == f and i[9] == 'Positivo':    #primero se busca la region y se ve si el caso es positivo y se le suma 1
                 cant = cant + 1
         cant_reg.append(cant)
 
     return lista , cant_reg
-    
     pass
 def funcion_b(datos): #Casos de Febrero
     cantidad = 0
@@ -33,11 +32,24 @@ def funcion_b(datos): #Casos de Febrero
         if fecha[1] == "02" and fecha[2] == "2023" :
             cantidad = cantidad + 1
     return cantidad
+def funcion_c(datos): #Casos de Pelicanos
+    canti = 0
+    for i in datos :
+        i = datos
+        if i[5] == 'Pelicanos' and i[9] == 'Positivo':
+            canti = canti + 1
+            print(canti)
+        return(canti)
 
-def funcion_c(datos):
-    pass
 def funcion_d(datos):
-    pass
+    cantidad = 0
+    for casosl in datos :
+        loro = [5]
+        fecha = casosl[2].split("-")
+        if loro == "Loro Trincahue" and fecha[1] == "03" and fecha[2] == "2022" :
+            cantidad = cantidad + 1
+        return cantidad
+
 def funcion_e(datos):
     pass
 
@@ -50,7 +62,7 @@ if __name__ == "__main__":
     print(positivos[1][0]) #Cantidades
     pos_febr = funcion_b(datos)  #casospos_febr
     print(pos_febr)
-    #pelicano= funcion_c(datos) #casos_pelicanos(datos)
-    #loro = funcion_d(datos) #casosloro_marzo(datos)
-    #grafico = funcion_e(datos) #grafico(datos)
+    pelicano= funcion_c(datos) #casos_pelicanos(datos)
+    loro = funcion_d(datos) #casosloro_marzo(datos)
+    grafico = funcion_e(datos) #grafico(datos)
     #generar_salida(positivos,pos_febr,pelicano,loro,grafico)
