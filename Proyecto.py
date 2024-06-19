@@ -1,4 +1,4 @@
-#Autor(es): Vicente Ramirez 'El crack´ y Luis Vallejos 'El maquina' juntos son el "Duo Dinamita".
+#Autor(es): Vicente Ramirez y Luis Vallejos
 
 def lectura_datos(proyecto): # Abrir archivos
     f= open(proyecto)
@@ -50,7 +50,42 @@ def funcion_d(datos): # Casos de Loros
             casosl.append(cantidad)
             print(cantidad)
         return(cantidad)
-def funcion_e(datos): # Grafico
+def funcion_e(datos): # Grafico               #Gaviota , Piquero, Salteador, Pelicano, Guanay
+    gaviota = 0
+    for i in datos :
+        if i[5] == 'Gaviota' and i[9] == 'Positivo' :
+            gaviota = gaviota + 1
+            gaviota.append(gaviota)
+            print(gaviota)
+        return gaviota
+    gaviota.close
+
+    piquero = 0
+    for i in datos :
+        if i [5] == 'Piquero' and i[9] == 'Positivo' :
+            piquero = piquero + 1
+            piquero.append(piquero)
+        return piquero
+    piquero.close
+
+    salteador = 0
+    for i in datos :
+        if i[5] == ' Salteador' and i[9] == 'Positivo' :
+            salteador = salteador +1
+            salteador.append(salteador)
+        return salteador
+    salteador.close
+    
+    #GAVIOTA
+
+    guanay = 0
+    for i in datos :
+        if i[5 == 'Guanay' and i[9] == 'Positivo'] :
+            guanay = guanay + 1
+            guanay.append(guanay)
+        return guanay
+    guanay.close
+
     pass
 
 if __name__ == "__main__":
@@ -67,4 +102,5 @@ if __name__ == "__main__":
     loro = funcion_d(datos) #casosloro_marzo(datos)
     print(loro)
     grafico = funcion_e(datos) #grafico(datos)
+    
     #generar_salida(positivos,pos_febr,pelicano,loro,grafico)
