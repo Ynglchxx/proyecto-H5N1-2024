@@ -32,7 +32,7 @@ def funcion_b(datos): # Casos de Febrero
         fecha = casof[2].split("-")
         if fecha[1] == "02" and fecha[2] == "2023" :
             cantidad = cantidad + 1
-    return cantidad
+    return cantidad, casof
 def funcion_c(datos): # Casos de Pelicanos
     casos_peli = 0
     for i in datos:
@@ -52,39 +52,43 @@ def funcion_d(datos): # Casos de Loros
         return(cantidad)
 def funcion_e(datos): # Grafico               #Gaviota , Piquero, Salteador, Pelicano, Guanay
     gaviota = 0
+    piquero = 0
+    salteador = 0
+    pelicano = 0
+    guanay = 0
     for i in datos :
         if i[5] == 'Gaviota' and i[9] == 'Positivo' :
             gaviota = gaviota + 1
-            gaviota.append(gaviota)
-            print(gaviota)
-        return gaviota
-    gaviota.close
-
-    piquero = 0
-    for i in datos :
         if i [5] == 'Piquero' and i[9] == 'Positivo' :
             piquero = piquero + 1
-            piquero.append(piquero)
-        return piquero
-    piquero.close
-
-    salteador = 0
-    for i in datos :
         if i[5] == ' Salteador' and i[9] == 'Positivo' :
             salteador = salteador +1
-            salteador.append(salteador)
-        return salteador
-    salteador.close
-    
-    #GAVIOTA
-
-    guanay = 0
-    for i in datos :
-        if i[5 == 'Guanay' and i[9] == 'Positivo'] :
+        if i[5] == 'Pelicano' and i[9] == 'Positivo' :
+            pelicano = pelicano + 1
+        if i[5] ==  'Guanay' and i[9] == 'Positivo' :
             guanay = guanay + 1
-            guanay.append(guanay)
-        return guanay
-    guanay.close
+    return gaviota, piquero, salteador, pelicano, guanay
+def generar_salida() :
+    salida = open("ResultadoS3.txt", "w")
+    salida.write("Autor(es): Luis Vallejos Ávila, Vicente Ramírez Muñoz" + "\n")
+    salida.write("Cantidad de casos detectados positivos Region" + "\n")
+    salida.write('\t' + "Región de Arica: ")
+    salida.write('\t' + "Región de Parinacota")
+    salida.write('\t' + "Región de Iquique")
+    salida.write('\t' + "Región de Antofagasta")
+    salida.write('\t' + "Región de Atacama")
+    salida.write('\t' + "Región de Coquimbo")
+    salida.write('\t' + "Región de Valparaíso")
+    salida.write('\t' + "Región de Metropolitana")
+    salida.write('\t' + "Región del Maule")
+    salida.write('\t' + "Región del Biobío")
+    salida.write('\t' + "Región de La Araucanía")
+    salida.write('\t' + "Región de Los Lagos")
+    salida.write('\t' + "Región de Aysén")
+    salida.write('\t' + "Región de Magallanes")
+    salida.write("Casos positivos mes Febrero del 2023: " + str() + '\n')
+    salida.write("Casos positivos especie Pelicanos: ")
+    salida.write("Incidencias 03/2022 del" "Loro Trincahue Chileno: " str(casosl) )
 
     pass
 
@@ -93,7 +97,7 @@ if __name__ == "__main__":
     #print(datos)
     positivos = funcion_a(datos) #casos_positivos
     print(positivos)
-     #Regiones
+    #Regiones
     print(positivos[1][0]) #Cantidades
     pos_febr = funcion_b(datos)  #casospos_febr
     #print(pos_febr)
@@ -102,5 +106,4 @@ if __name__ == "__main__":
     loro = funcion_d(datos) #casosloro_marzo(datos)
     print(loro)
     grafico = funcion_e(datos) #grafico(datos)
-    
-    #generar_salida(positivos,pos_febr,pelicano,loro,grafico)
+    generar_salida(positivos,pos_febr,pelicano,loro,grafico)
