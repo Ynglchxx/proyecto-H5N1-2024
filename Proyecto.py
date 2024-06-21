@@ -65,9 +65,17 @@ def funcion_e(datos): # Grafico               #Gaviota , Piquero, Salteador, Pel
             pelicano = pelicano + 1
         if i[5] in  'Guanay' and i[9] in 'Positivo' :
             guanay = guanay + 1
-    print(gaviota,piquero,salteador,pelicano,guanay)
-    return gaviota, piquero, salteador, pelicano, guanay
+        print(gaviota)
 
+    #Datos para el grafico
+    Especies = ["Gaviota", "Piquero", "Salteador", "Pelicano", "Guanay"]
+    Conteo = gaviota, piquero, salteador , pelicano, guanay
+    plt.bar(Especies, Conteo, color =["Yellow", "Blue", "Brown", "Gray", "Black"])
+    plt.xlabel("Especies")
+    plt.ylabel("Cantidad de Casos")
+    plt.title("Casos Positivos por Especie")
+    plt.show()
+    return gaviota, piquero, salteador, pelicano, guanay, Conteo
 
 
 def generar_salida(region, casosf, casos_pelicano, casosl) :
