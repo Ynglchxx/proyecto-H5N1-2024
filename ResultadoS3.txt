@@ -1,21 +1,21 @@
 Autor(es): Luis Vallejos Ávila, Vicente Ramírez Muñoz
-Cantidad de casos detectados positivos Region
+Cantidad de casos detectados positivos región:
 	Región de Arica: 71
-	Región de Tarapaca:105
-	Región de Antofagasta:107
-	Región de Atacama:76
-	Región de Coquimbo:108
-	Región de Valparaíso:81
-	Región de Metropolitana:1
-	Región de O'Higgins:53
-	Región del Maule:31
-	Región de Ñuble:16
-	Región del Biobío:36
-	Región de La Araucanía:9
-	Región de Los Ríos:19
-	Región de Los Lagos:34
-	Región de Aysén:4
-	Región de Magallanes:28
+	Región de Tarapaca: 105
+	Región de Antofagasta: 107
+	Región de Atacama: 76
+	Región de Coquimbo: 108
+	Región de Valparaíso: 81
+	Región de Metropolitana: 1
+	Región de O'Higgins: 53
+	Región del Maule: 31
+	Región de Ñuble: 16
+	Región del Biobío: 36
+	Región de La Araucanía: 9
+	Región de Los Ríos: 19
+	Región de Los Lagos: 34
+	Región de Aysén: 4
+	Región de Magallanes: 28
 Casos positivos mes Febrero del 2023: 843
-Casos positivos especie Pelicanos: 129
-Incidencias 03/2022 del Loro Trincahue Chileno: 0
+Casos positivos especie Pelicano: 129
+Incidencias 03/2022 del 'Loro Trincahue Chileno': 0
