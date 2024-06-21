@@ -1,4 +1,4 @@
-Autor(es): Luis Vallejos Ávila, Vicente Ramírez Muñoz
+Autor(es): Luis Vallejos Ávila, Vicente Ramírez Muñoz.
 Cantidad de casos detectados positivos región:
 	Región de Arica: 71
 	Región de Tarapaca: 105

@@ -1,12 +1,12 @@
-#Autor(es): Vicente Ramirez y Luis Vallejos
+#Autor(es): Vicente Ramírez Muñoz y Luis Vallejos Ávila.
 import matplotlib.pyplot as plt
 
 def lectura_datos(datos): # Abrir archivos
     f= open(datos, "r", encoding="UTF-8")
-    datos=[]
+    datos=[] #Crea una lista
     for linea in f:
-        linea= linea.rstrip("\n")
-        lista = linea.split(",")
+        linea= linea.rstrip("\n") #Se elimana los espacios en blanco
+        lista = linea.split(",") #Dividir la cadena linea en subcadenas
         datos.append(lista)
     f.close()
     return datos
@@ -90,7 +90,7 @@ def funcion_e(datos): #Grafico
 
 def generar_salida(region, casosf, casos_pelicano, casosl) :
     salida = open("ResultadoS3.txt", "w", encoding="UTF-8" ) #Crear archivo de texto y se agrega "UTF-8" para compatibilidad del codigo en este caso para las tíldes
-    salida.write("Autor(es): Luis Vallejos Ávila, Vicente Ramírez Muñoz" + "\n")
+    salida.write("Autor(es): Luis Vallejos Ávila, Vicente Ramírez Muñoz." + "\n")
     #Cantidad de casos por Región
     salida.write("Cantidad de casos detectados positivos región:" + "\n")
     salida.write('\t' + "Región de Arica: " + str(cant_reg[3]) + "\n")
