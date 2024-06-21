@@ -55,18 +55,17 @@ def funcion_e(datos): # Grafico               #Gaviota , Piquero, Salteador, Pel
     pelicano = 0
     guanay = 0
     for i in datos :
-        if i[5] in 'Gaviota ' and i[9] in 'Positivo' :
+        if 'Gaviota' in i[5] and 'Positivo' in i[9]  :
             gaviota = gaviota + 1
-        if i [5] in 'Piquero' and i[9] in 'Positivo' :
+        if 'Piquero' in i [5] and 'Positivo' in i[9]  :
             piquero = piquero + 1
-        if i[5] in 'Salteador' and i[9] in 'Positivo' :
+        if 'Salteador' in i[5] and 'Positivo' in i[9]  :
             salteador = salteador +1
-        if i[5] in 'Pelicano' and i[9] in 'Positivo' :
+        if 'Pelicano' in i[5] and 'Positivo' in i[9]  :
             pelicano = pelicano + 1
-        if i[5] in  'Guanay' and i[9] in 'Positivo' :
+        if 'Guanay' in i[5] and 'Positivo' in  i[9] :
             guanay = guanay + 1
-        print(gaviota)
-
+    print(gaviota, piquero, salteador, pelicano, guanay)
     #Datos para el grafico
     Especies = ["Gaviota", "Piquero", "Salteador", "Pelicano", "Guanay"]
     Conteo = gaviota, piquero, salteador , pelicano, guanay
@@ -107,9 +106,9 @@ def generar_salida(region, casosf, casos_pelicano, casosl) :
 
 if __name__ == "__main__":
     datos = lectura_datos("protocolo_vigilancia.txt")
-    lista, cant_reg, region = funcion_a(datos) #casos_positivos
-    cantidad, casof = funcion_b(datos)  #casospos_febr
-    casos_pelicano = funcion_c(datos) #casos_pelicanos(datos)
-    cantidad_loro = funcion_d(datos) #casosloro_marzo(datos)
-    grafico = funcion_e(datos) #grafico(datos)
+    lista, cant_reg, region = funcion_a(datos)
+    cantidad, casof = funcion_b(datos)
+    casos_pelicano = funcion_c(datos)
+    cantidad_loro = funcion_d(datos)
+    grafico = funcion_e(datos)
     salida = generar_salida(region,casof,casos_pelicano,cantidad_loro,)
