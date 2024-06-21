@@ -18,4 +18,4 @@ Cantidad de casos detectados positivos Region
 	Región de Magallanes:28
 Casos positivos mes Febrero del 2023: 843
 Casos positivos especie Pelicanos: 129
-Incidencias 03/2022 del Loro Trincahue Chileno: 843
+Incidencias 03/2022 del Loro Trincahue Chileno: 0

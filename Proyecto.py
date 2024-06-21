@@ -41,13 +41,13 @@ def funcion_c(datos): # Casos de Pelicanos
             casos_pelicano = casos_pelicano + 1
     return casos_pelicano
 def funcion_d(datos): # Casos de Loros
-    cantidad = 0
+    cantidad_loro = 0
     for casosl in datos :
         loro = [5]
         fecha = casosl[2].split("-")
         if loro == "Loro" or "Loro Trincahue" and fecha[1] == "03" and fecha[2] == "2022" :
-            cantidad = cantidad + 1
-        return cantidad, casosl
+            cantidad_loro = cantidad_loro + 1
+        return cantidad_loro
 def funcion_e(datos): # Grafico               #Gaviota , Piquero, Salteador, Pelicano, Guanay
     gaviota = 0
     piquero = 0
@@ -88,7 +88,7 @@ def generar_salida(region, casosf, casos_pelicano, casosl) :
     salida.write('\t' + "Región de Magallanes:" + str(cant_reg[1]) + "\n")
     salida.write("Casos positivos mes Febrero del 2023: " + str(cantidad) + '\n')
     salida.write("Casos positivos especie Pelicanos: " + str(casos_pelicano) + "\n")
-    salida.write("Incidencias 03/2022 del " "Loro Trincahue Chileno: " + str(cantidad) + "\n" )
+    salida.write("Incidencias 03/2022 del " "Loro Trincahue Chileno: " + str(cantidad_loro) + "\n" )
     salida.close()
 
 
@@ -98,6 +98,6 @@ if __name__ == "__main__":
     lista, cant_reg, region = funcion_a(datos) #casos_positivos
     cantidad, casof = funcion_b(datos)  #casospos_febr
     casos_pelicano = funcion_c(datos) #casos_pelicanos(datos)
-    casosl = funcion_d(datos) #casosloro_marzo(datos)
+    cantidad_loro = funcion_d(datos) #casosloro_marzo(datos)
     grafico = funcion_e(datos) #grafico(datos)
-    salida= generar_salida(region,casof,casos_pelicano,casosl,)
+    salida= generar_salida(region,casof,casos_pelicano,cantidad_loro,)
