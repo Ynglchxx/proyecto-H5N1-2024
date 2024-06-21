@@ -7,7 +7,7 @@ def lectura_datos(proyecto): # Abrir archivos
         linea= linea.rstrip("\n")
         lista = linea.split(",")
         datos.append(lista)
-    f.close
+    f.close()
     return datos
 def funcion_a(datos): # Casos por regiones
     lista = []
@@ -34,21 +34,19 @@ def funcion_b(datos): # Casos de Febrero
             cantidad = cantidad + 1
     return cantidad, casof
 def funcion_c(datos): # Casos de Pelicanos
-    casos_peli = 0
+    casos_pelicano = 0
     for i in datos:
         if i[5] == 'Pelicano' and i[9] == 'Positivo':
-            casos_peli = casos_peli + 1
-    return casos_peli
+            casos_pelicano = casos_pelicano + 1
+    return casos_pelicano
 def funcion_d(datos): # Casos de Loros
-    casosl = []
+    cantidad = 0
     for casosl in datos :
-        cantidad = 0
         loro = [5]
         fecha = casosl[2].split("-")
         if loro == "Loro" or "Loro Trincahue" and fecha[1] == "03" and fecha[2] == "2022" :
             cantidad = cantidad + 1
-            casosl.append(cantidad)
-            print(cantidad)
+        print(cantidad)    
         return(cantidad)
 def funcion_e(datos): # Grafico               #Gaviota , Piquero, Salteador, Pelicano, Guanay
     gaviota = 0
@@ -68,42 +66,37 @@ def funcion_e(datos): # Grafico               #Gaviota , Piquero, Salteador, Pel
         if i[5] ==  'Guanay' and i[9] == 'Positivo' :
             guanay = guanay + 1
     return gaviota, piquero, salteador, pelicano, guanay
-def generar_salida() :
-    salida = open("ResultadoS3.txt", "w")
+def generar_salida(region, casosf, casos_pelicano, casosl) :
+    salida = open("ResultadoS3.txt", "w") as salida :   # Crear archivo de texto
     salida.write("Autor(es): Luis Vallejos Ávila, Vicente Ramírez Muñoz" + "\n")
     salida.write("Cantidad de casos detectados positivos Region" + "\n")
-    salida.write('\t' + "Región de Arica: ")
-    salida.write('\t' + "Región de Parinacota")
-    salida.write('\t' + "Región de Iquique")
-    salida.write('\t' + "Región de Antofagasta")
-    salida.write('\t' + "Región de Atacama")
-    salida.write('\t' + "Región de Coquimbo")
-    salida.write('\t' + "Región de Valparaíso")
-    salida.write('\t' + "Región de Metropolitana")
-    salida.write('\t' + "Región del Maule")
-    salida.write('\t' + "Región del Biobío")
-    salida.write('\t' + "Región de La Araucanía")
-    salida.write('\t' + "Región de Los Lagos")
-    salida.write('\t' + "Región de Aysén")
-    salida.write('\t' + "Región de Magallanes")
-    salida.write("Casos positivos mes Febrero del 2023: " + str() + '\n')
-    salida.write("Casos positivos especie Pelicanos: ")
-    salida.write("Incidencias 03/2022 del" "Loro Trincahue Chileno: " str(casosl) )
+    salida.write('\t' + "Región de Arica: " + str(region[3]) + "\n")
+    salida.write('\t' + "Región de Tarapaca:" + str(region[2])+ "\n")
+    salida.write('\t' + "Región de Antofagasta:" + str(region[4]) + "\n")
+    salida.write('\t' + "Región de Atacama:" + str(region[5]) + "\n")
+    salida.write('\t' + "Región de Coquimbo:" + str(region[7]) + "\n")
+    salida.write('\t' + "Región de Valparaíso:" + str(region[0]) + "\n")
+    salida.write('\t' + "Región de Metropolitana:" + str(region[9]) + "\n")
+    salida.write('\t' + "Región de O'Higgins:" + str(region[12]) + "\n")
+    salida.write('\t' + "Región del Maule:" + str(region[6]) + "\n")
+    salida.write('\t' + "Región de Ñuble:" + str(region[10]) + "\n")
+    salida.write('\t' + "Región del Biobío:" + str(region[8]) + "\n")
+    salida.write('\t' + "Región de La Araucanía:" + str(region[14]) + "\n")
+    salida.write('\t' + "Región de Los Ríos:" + str(region[13]) + "\n")
+    salida.write('\t' + "Región de Los Lagos:" + str(region[15]) + "\n")
+    salida.write('\t' + "Región de Aysén:" + str(region[11]) + "\n")
+    salida.write('\t' + "Región de Magallanes:" + str(region[1]) + "\n")
+    salida.write("Casos positivos mes Febrero del 2023: " + str(casosf) + '\n')
+    salida.write("Casos positivos especie Pelicanos: " + str(casos_pelicano + "\n"))
+    salida.write("Incidencias 03/2022 del" "Loro Trincahue Chileno: " + str(casosl) + "\n" )
 
     pass
 
 if __name__ == "__main__":
     datos= lectura_datos("protocolo_vigilancia.txt")
-    #print(datos)
     positivos = funcion_a(datos) #casos_positivos
-    print(positivos)
-    #Regiones
-    print(positivos[1][0]) #Cantidades
     pos_febr = funcion_b(datos)  #casospos_febr
-    #print(pos_febr)
     pelicano = funcion_c(datos) #casos_pelicanos(datos)
-    print(pelicano)
     loro = funcion_d(datos) #casosloro_marzo(datos)
-    print(loro)
     grafico = funcion_e(datos) #grafico(datos)
     generar_salida(positivos,pos_febr,pelicano,loro,grafico)
