@@ -19,12 +19,17 @@ def funcion_a(datos): # Casos por regiones
             lista.append(region)
     cant_reg=[]
     for f in lista :
+        canti = 0
         cant=0
         for i in datos :
             if i[3] == f and i[9] == 'Positivo':  #primero se busca la region y se ve si el caso es positivo y se le suma 1
                 cant = cant + 1
+            if "Magallanes" in i[3] and 'Positivo' in i[9] :
+                canti= canti + 1
+        print(canti)
         cant_reg.append(cant)
-    return lista , cant_reg, region
+        
+    return lista , cant_reg, region, canti
 
 def funcion_b(datos): # Casos de Febrero
     #Contador de los casos de el mes de Febrero
@@ -81,11 +86,11 @@ def funcion_e(datos): #Grafico
     Especies = ["Gaviota", "Piquero", "Salteador", "Pelicano", "Guanay"]
     Conteo = gaviota, piquero, salteador , pelicano, guanay
 
-    plt.bar(Especies, Conteo, color =["Yellow", "Blue", "Brown", "Gray", "Black"])
-    plt.xlabel("Especies")
-    plt.ylabel("Cantidad de Casos")
-    plt.title("Casos Positivos por Especie")
-    plt.show()
+    #plt.bar(Especies, Conteo, color =["Yellow", "Blue", "Brown", "Gray", "Black"])
+    #plt.xlabel("Especies")
+    #plt.ylabel("Cantidad de Casos")
+    #plt.title("Casos Positivos por Especie")
+    #plt.show()
     return gaviota, piquero, salteador, pelicano, guanay, Conteo
 
 def generar_salida(region, casosf, casos_pelicano, casosl) :
@@ -121,7 +126,7 @@ def generar_salida(region, casosf, casos_pelicano, casosl) :
 
 if __name__ == "__main__":
     datos = lectura_datos("protocolo_vigilancia.txt")
-    lista, cant_reg, region = funcion_a(datos)
+    lista, cant_reg, region, canti = funcion_a(datos)
     cantidad, casof = funcion_b(datos)
     casos_pelicano = funcion_c(datos)
     cantidad_loro = funcion_d(datos)
